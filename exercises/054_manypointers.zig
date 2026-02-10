@@ -16,13 +16,13 @@ pub fn main() void {
     // Take a good look at the array type to which we're coercing
     // the zen12 string (the REAL nature of strings will be
     // revealed when we've learned some additional features):
-    const zen12: *const [21]u8 = "Memory is a resource.";
+    const zen12: []const u8 = "Memory is a resource.";
     //
     //   It would also have been valid to coerce to a slice:
     //         const zen12: []const u8 = "...";
     //
     // Now let's turn this into a "many-item pointer":
-    const zen_manyptr: [*]const u8 = zen12;
+    const zen_manyptr: []const u8 = zen12;
 
     // It's okay to access zen_manyptr just like an array or slice as
     // long as you keep track of the length yourself!
